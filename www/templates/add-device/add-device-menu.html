@@ -1,0 +1,42 @@
+ <ion-modal-view>
+    <ion-header-bar  class="bar-positive">
+        <h1 class="title">{{'ADD_MENU.TITLE' | translate}}</h1>
+    </ion-header-bar>
+    <ion-content >
+ 
+        <ul class="list">
+            <li class="item item-divider">
+                 {{'ADD_MENU.TITLE_SEPARATOR' | translate}}
+            </li>
+            <li ng-click= "openAddTitle()"  class="item">
+                 {{'ADD_MENU.ADD_TITLE' | translate}}
+            </li>
+            <li   class="item item-divider">
+                 {{'ADD_MENU.TITLE_WRITE' | translate}}
+            </li>
+            <li ng-click= "openAddDeviceButton()"  class="item">
+                {{'ADD_MENU.BUTTON' | translate}}
+            </li>
+            <li ng-click= "openAddDeviceToggle()"   class="item">
+                {{'ADD_MENU.TOGGLE' | translate}}
+            </li>
+            <li ng-click="openAddDeviceSelect()"  class="item">
+                {{'ADD_MENU.SELECT' | translate}}
+            </li>
+            <li ng-click= "openAddDeviceSlider()"  class="item">
+                {{'ADD_MENU.SLIDE' | translate}}
+            </li>
+            <li ng-click= "openAddDeviceText()" class="item">
+                {{'ADD_MENU.TEXT' | translate}}
+            </li>
+            
+            <li  class="item item-divider">
+                 {{'ADD_MENU.TITLE_READ' | translate}}
+            </li>
+            <li ng-click= "openAddLabel()"  class="item">
+                 {{'ADD_MENU.LABEL' | translate}}
+            </li>
+            
+        </ul>
+    </ion-content>
+</ion-modal-view>

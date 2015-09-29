@@ -1,0 +1,46 @@
+<ion-tabs class="tabs-positive tabs-icon-only">
+
+  <ion-tab href="#/tabs/devices" title="Devices" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
+     <ion-nav-view name="devices-tab">
+     </ion-nav-view>
+  </ion-tab>
+
+  <ion-tab href="#/tabs/monitor"  title="About" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
+    <ion-nav-view name="monitor-tab">
+    </ion-nav-view>
+     <ion-nav-view name="add-menu">
+     </ion-nav-view>
+  </ion-tab>
+
+</ion-tabs>
+  
+<!--
+  <ion-view title="Clouduino">
+   <ion-nav-buttons side="primary">
+      <button class="button icon ion-navicon" ng-click="openMenu()">
+      </button>
+    </ion-nav-buttons>
+    <ion-content>
+         <div class="list">
+             <div class="item ">
+               <div class="row">
+                <div class="col col-75">
+                 <label class="item item-input">
+                     <input type="text" ng-model="msg" placeholder="Mensaje">
+                </label>
+                </div>
+                <div class="col">
+                    <button class="button  button-positive" ng-click="enviarMensaje(this.msg)">Enviar</button>
+                 </div>
+             </div>
+             </div>
+            <div class="item item-divider">
+                Mensajes recibidos
+            </div>
+            <div class="item" ng-repeat="(m,t) in messages track by $index">
+                {{t}}
+            </div>
+        </div>
+    </ion-content>
+</ion-view>-->
+  

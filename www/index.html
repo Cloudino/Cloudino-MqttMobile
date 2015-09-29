@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="lib/ionic/release/css/ionic.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!--link rel="stylesheet" href="bower_components/ionic-material/dist/ionic.material.css" /-->
+    <link href="styles/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="styles/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-animate/angular-animate.js"></script>
+    <script src="lib/angular-sanitize/angular-sanitize.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="lib/ionic/release/js/ionic.js"></script>
+    <script src="lib/ionic/release/js/ionic-angular.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="lib/mqtt/mqtt.js"></script>
+    <script src="lib/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="lib/angular-translate/angular-translate.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!--script src="bower_components/ionic-material/dist/ionic.material.js"></script-->
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <!-- build:js scripts/scripts.js -->
+     <script src="scripts/services/MqttService.js"></script>
+    <script src="scripts/controllers/devices.js"></script>
+    <script src="scripts/controllers/config.js"></script>
+    <script src="scripts/controllers/index.js"></script>
+    <script src="scripts/controllers/add-device/menu.js"></script>
+    <script src="scripts/controllers/add-device/button.js"></script>
+    <script src="scripts/language.js"></script>
+    <script src="scripts/configuration.js"></script>
+    <script src="scripts/app.js"></script>
+    <!-- endbuild -->
+  </head>
+    <body ng-app="starter">
+        <ion-nav-bar class="bar-positive flat">
+             <ion-nav-back-button></ion-nav-back-button>
+        </ion-nav-bar>     
+        <ion-nav-view></ion-nav-view>
+    </body>
+</html>
+
+
+
+<!-- 
+
+ID del proyecto: cloudino-1064 Número del proyecto: 25352594471
+API key : AIzaSyAL3pcIv-1OA0oKqaQ23GJxUo5IiIxM0jE
+
+-->

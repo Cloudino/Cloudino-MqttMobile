@@ -1,0 +1,83 @@
+<ion-view view-title="Cloudino Mqtt"> 
+    <ion-nav-buttons side="primary">
+       <button ng-click="displayMenu($event)" style="width:48px;"  class=" button button-icon ion-android-more-vertical"></button>
+        
+    </ion-nav-buttons>
+    <ion-content class="" >
+        <ion-list class="" show-reorder="canReorder" show-delete="canDelete">
+            <ion-item item="device" ng-class="{'item-divider': device.type === 'title' }"  
+               href="#"  class="animate-repeat "  ng-repeat="(i, device) in devices track by device.dateCreated ">
+                <div  ng-class = "{'item-button-right item-input ':device.type === 'button', 'item-toggle item-input ': device.type === 'toggle' ,
+                                   'range  range-positive item-input ' :device.type === 'slider',
+                                   'item-input item-select': device.type === 'select',
+                                   'custom-item-divider': device.type === 'title' }" class=" ">   
+                    <!--////////////////  title  ////////////////////-->
+                    <div  ng-if="device.type === 'title' ">{{device.text}}</div>
+                    
+                    <!--////////////////  label  ////////////////////-->
+                    <div  ng-if="device.type === 'label' " class="row">
+                        <div style="overflow: hidden;" class="padding col">{{device.text}}</div>
+                        <div class="col text-right"><strong>{{device.msg}}</strong></div>
+                    </div>
+                    <div ></div>
+                       
+                    <!--////////////////  button  ////////////////////-->
+                    <span  class="text-limit" ng-if="device.type === 'button' ">{{device.text}}</span>   
+                    <button  ng-if="device.type === 'button' " class="button button-positive"
+                        on-release="sendMsg(device.topic, device.msgOff)" 
+                        on-touch="sendMsg(device.topic, device.msgOn)" >
+                        {{device.buttonText}}
+                    </button>
+                    <!--////////////////  Slider  ////////////////////-->
+                    <span class="text-limit" style="min-width:50%;" ng-if="device.type === 'slider'">
+                       {{device.text}}    
+                    </span>
+                    <input ng-if="device.type === 'slider'" type="range" step="{{device.step}}"  min="{{device.min}}" max="{{device.max}}" 
+                    ng-model="device.actualPos" on-release="sendMsg(device.topic,device.actualPos)"> 
+                      <!--////////////////  Select  ////////////////////-->
+                    <div class="text-limit" ng-if="device.type === 'select'" class="input-label">
+                        {{device.text}}
+                    </div>
+                    <select ng-model="device.actualPos" ng-if="device.type === 'select'" ng-change="sendMsg(device.topic,device.actualPos)">
+                        <option ng-repeat="msg in device.list track by $index">{{msg}}</option>
+                    </select>
+                    <!--////////////////  Text  ////////////////////-->
+                   <div   ng-if="device.type === 'text'" class="item-input-inset">
+                        <label class="item-input-wrapper">
+                            <input type="search" value="" ng-model="textSend" placeholder="{{'MESSAGE'| translate}}">
+                        </label>
+                        <button ng-click="sendMsg(device.topic,textSend)" class="button button-clear">
+                            {{'SEND'| translate}}
+                        </button>
+                    </div>
+                    <!--////////////////  toggle  ////////////////////-->
+                    <span class="text-limit"  ng-if="device.type === 'toggle' ">{{device.text}}</span>
+                    <label  ng-if="device.type === 'toggle' " class="toggle toggle-positive">
+                    <input  ng-if="device.type === 'toggle' "  ng-checked="device.actualPos"  
+                           ng-model="device.actualPos"  ng-if="device.type === 'toggle' " type="checkbox" 
+                            ng-change="onToggleChange($index,device.actualPos,device.topic, device.actualPos)"/>
+                    <div  ng-if="device.type === 'toggle' " class="track">
+                         <div  ng-if="device.type === 'toggle' " class="handle"></div>
+                    </div>
+
+                
+                </div>
+                <!--////////////////  Config  ////////////////////-->
+                 <div ng-class="{'visible active':canDelete,'icon-divider-custom':device.type === 'title'}" style="margin-left:-10px;" class="item-left-edit enable-pointer-events ">
+                     <button class=" button button-icon icon ion-edit" ng-click="editItem($index,device)"></button>
+                 </div>
+                <ion-delete-button class="ion-trash-b" style="color: #444;" ng-click="removeItem($index)"></ion-delete-button>
+                <ion-reorder-button class="ion-navicon" on-reorder="reorderItem(device, $fromIndex, $toIndex)"></ion-reorder-button> 
+            </ion-item>
+            <div style="height:84px;">
+                
+            </div>
+        </ion-list>
+    </button>
+    </ion-content>
+     <button ng-click="canReorder = false" ng-show="canReorder" class="button button-fab button-fab-bottom-right button-assertive icon ion-android-done ng-hide">
+     <button ng-click="canDelete = false" ng-show="canDelete" class="button button-fab button-fab-bottom-right button-assertive icon ion-android-done ng-hide">
+   
+
+</ion-view>
+  

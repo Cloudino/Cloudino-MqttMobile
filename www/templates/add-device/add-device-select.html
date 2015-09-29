@@ -1,0 +1,48 @@
+ <ion-modal-view>
+   <ion-header-bar  class="bar-positive">
+        <h1 class="title">{{'ADD_SELECT.TITLE' | translate}}</h1>
+    </ion-header-bar>
+    <ion-content >
+        <form class="validate-form" name="form" novalidate>
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">{{'ADD_SELECT.TEXT' | translate}}</span>
+                    <input required ng-change="onTextButtonChange(text)" type="text" ng-model="text" name="text">
+                    <i ng-class="{'valitade-icon': form.text.$invalid && form.text.$dirty  }" style="display:none;" class ="icon ion-alert-circled"></i>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">{{'ADD_SELECT.TOPIC' | translate}}</span>
+                    <input required remove-space type="text" ng-model="topic" name="topic" >
+                    <i ng-class="{'valitade-icon': form.topic.$invalid && form.topic.$dirty  }" style="display:none;" class ="icon ion-alert-circled"></i>
+                </label> 
+                <ion-list show-delete="true"  >
+                  <ion-item class="item-divider">
+                      {{'ADD_SELECT.LIST_TITLE' | translate}}
+                  </ion-item>
+                   <ion-item class="padding-left" style="padding:12px!important;" ng-repeat= "msg in selectList track by $index">
+                       {{ msg}}
+                       <ion-delete-button class="ion-trash-b" style="color: #444;"
+                       ng-click="selectList.splice($index, 1)">
+                   </ion-item>
+
+                </ion-list>
+                <div class="item item-input-inset">
+                    <label class="item-input-wrapper">
+                        <input required type="search" name="listElement" ng-model="listElement" placeholder="{{'ADD_SELECT.ADD_MSG' | translate}}">
+                    </label>
+                    <button ng-disabled="form.listElement.$invalid"  ng-click="addSelectMsg(listElement)" class="button button-clear">
+                        {{'ADD' | translate}}
+                    </button>
+                </div>
+
+            </div>
+            <div class="padding">
+                <button  ng-disabled= "selectList.length < 2 || form.text.$invalid || form.topic.$invalid ||
+                        form.msgOn.$invalid || form.msgOff.$invalid"
+                          ng-click="saveSelect(text,topic)" class="button button-block button-positive">
+                    {{ 'SAVE' | translate }}
+                </button>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

@@ -1,0 +1,44 @@
+ <ion-modal-view>
+   <ion-header-bar  class="bar-positive">
+        <h1 class="title">{{'ADD_SLIDER.TITLE' | translate}}</h1>
+    </ion-header-bar>
+    <ion-content >
+        <form class="validate-form" name="form" novalidate>
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">{{'ADD_SLIDER.TEXT' | translate}}</span>
+                    <input required ng-change="onTextButtonChange(text)" type="text" ng-model="text" name="text" >
+                    <i ng-class="{'valitade-icon': form.text.$invalid && form.text.$dirty  }" style="display:none;" class ="icon ion-alert-circled"></i>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">{{'ADD_SLIDER.TOPIC' | translate}}</span>
+                    <input required remove-space type="text" ng-model="topic" name="topic">
+                    <i ng-class="{'valitade-icon': form.topic.$invalid && form.topic.$dirty  }" style="display:none;" class ="icon ion-alert-circled"></i>
+                </label>
+               <label class="item item-input item-stacked-label">
+                    <span class="input-label">{{'ADD_SLIDER.MIN' | translate}}</span>
+                    <input required type="text" ng-model="minValue" name="minValue">
+                    <i ng-class="{'valitade-icon': form.minValue.$invalid && form.minValue.$dirty  }" style="display:none;" class ="icon ion-alert-circled"></i>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">{{'ADD_SLIDER.MAX' | translate}}</span>
+                    <input required type="text" ng-model="maxValue" name="maxValue" >
+                    <i ng-class="{'valitade-icon': form.maxValue.$invalid && form.maxValue.$dirty  }" style="display:none;" class ="icon ion-alert-circled"></i>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">{{'ADD_SLIDER.STEP' | translate}}</span>
+                    <input required type="text" ng-model="stepValue" name="stepValue" >
+                     <i ng-class="{'valitade-icon': form.stepValue.$invalid && form.stepValue.$dirty  }" style="display:none;" class ="icon ion-alert-circled"></i>
+                </label>
+
+            </div>
+            <div class="padding">
+                <button ng-disabled="form.text.$invalid || form.topic.$invalid ||
+                    form.minValue.$invalid || form.maxValue.$invalid || form.stepValue.$invalid" 
+                    ng-click="saveSlider(text,topic,minValue,maxValue,stepValue)" class="button button-block button-positive">
+                    {{ 'SAVE' | translate }}
+                </button>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

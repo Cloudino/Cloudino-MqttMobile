@@ -1,0 +1,21 @@
+ <ion-modal-view>
+   <ion-header-bar  class="bar-positive">
+        <h1 class="title">{{'ADD_TITLE.TITLE' | translate}}</h1>
+    </ion-header-bar>
+    <ion-content >
+        <form class="validate-form" name="form" novalidate>
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">{{'ADD_TITLE.TEXT' | translate}}</span>
+                    <input ng-change="onTextButtonChange(text)" type="text" ng-model="text" name="text" required>
+                    <i ng-class="{'valitade-icon': form.text.$invalid && form.text.$dirty  }" style="display:none;" class ="icon ion-alert-circled"></i>
+                </label>
+            </div>
+            <div class="padding">
+                <button ng-disabled="form.text.$invalid"  ng-click="saveTitle(text)" class="button button-block button-positive">
+                    {{ 'SAVE' | translate }}
+                </button>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

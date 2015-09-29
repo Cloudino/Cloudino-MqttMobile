@@ -1,0 +1,32 @@
+<ion-view view-title="{{ 'CONFIGURATION' | translate }}">
+    <ion-nav-buttons>
+    </ion-nav-buttons>
+    
+    <ion-content >
+
+        <div class="list">
+          <label class="item item-input item-floating-label">
+            <span class="input-label"> {{ 'SERVER' | translate }}</span>
+            <input ng-model="server" type="text" placeholder=" {{ 'SERVER' | translate }}">
+          </label>
+          <label class="item item-input item-floating-label">
+            <span class="input-label"> {{ 'PORT' | translate }}</span>
+            <input ng-model="port" type="number" placeholder="{{ 'PORT' | translate }}">
+          </label>
+          <label class="item item-input item-floating-label">
+            <span class="input-label"> {{ 'USER' | translate }}</span>
+            <input ng-model="user" type="text" placeholder="{{ 'USER' | translate }}">
+          </label>
+           <label class="item item-input item-floating-label">
+            <span class="input-label"> {{ 'PASSWORD' | translate }}</span>
+            <input ng-model="pass" type="password" placeholder="Contraseña">
+          </label>
+        </div>
+        <div class="padding">
+            <button ng-click="testConexion(server,port,user,pass)" class="button button-block button-positive">
+                {{ 'TEST-CONNECTION' | translate }}
+            </button>
+        </div>
+    </ion-content>
+</ion-view>
+  

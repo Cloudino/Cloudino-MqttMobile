@@ -1,0 +1,27 @@
+ <ion-modal-view>
+   <ion-header-bar  class="bar-positive">
+        <h1 class="title">{{'ADD_TEXT.TITLE' | translate}}</h1>
+    </ion-header-bar>
+    <ion-content >
+        <form class="validate-form" name="form" novalidate>
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">{{'ADD_TEXT.TEXT' | translate}}</span>
+                    <input required ng-change="onTextButtonChange(text)" name="text" type="text" ng-model="text">
+                    <i ng-class="{'valitade-icon': form.text.$invalid && form.text.$dirty  }" style="display:none;" class ="icon ion-alert-circled"></i>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">{{'ADD_TEXT.TOPIC' | translate}}</span>
+                    <input required remove-space  type="text" ng-model="topic" name="topic"  >
+                    <i ng-class="{'valitade-icon': form.topic.$invalid && form.topic.$dirty  }" style="display:none;" class ="icon ion-alert-circled"></i>
+                </label>
+            </div>
+            <div class="padding">
+                <button ng-disabled="form.text.$invalid || form.topic.$invalid " 
+                     ng-click="saveText(text,topic)" class="button button-block button-positive">
+                    {{ 'SAVE' | translate }}
+                </button>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

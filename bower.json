@@ -1,0 +1,19 @@
+{
+    "name": "HelloIonic",
+    "private": "true",
+    "dependencies": {
+        "ionic": "v1.0.0-rc.3",
+        "ngCordova": "v0.1.14-alpha",
+        "phonegap-plugin-push": "https://github.com/phonegap/phonegap-plugin-push.git#~1.2.3",
+        "angular-ui-router": "~0.2.15",
+        "angular-local-storage": "~0.2.2",
+        "angular-translate": "~2.7.2"
+    },
+    "devDependencies": {
+        "angular-mocks": "~1.3.6",
+        "angular-scenario": "~1.3.6"
+    },
+    "resolutions": {
+        "angular": ">= 1.3.6"
+    }
+}
