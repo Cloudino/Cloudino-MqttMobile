@@ -152,14 +152,14 @@ angular.module('controllers.device', ['ionic','services','config','ngCordova','p
     
     $scope.displayMenu = function(e){
         $translate(['EDIT', 'REORDER', 'DELETE','ACTION.TITLE','CANCEL']).then(function (t) {
-           if (ionic.Platform.isAndroid()) {
+           //if (ionic.Platform.isAndroid()) {
                 $ionicPopover.fromTemplateUrl('templates/add-device/menu-device.html', {
                     scope: $scope
                 }).then(function(popover) {
                     $scope.menuDevices = popover;
                     $scope.menuDevices.show(e);
                 });
-            }else{
+            /*}else{
                 var hideSheet = $ionicActionSheet.show({
                     buttons: [
                         { text: t.EDIT },
@@ -174,7 +174,7 @@ angular.module('controllers.device', ['ionic','services','config','ngCordova','p
                         return true;
                     }
                 });
-            }
+            }*/
         });
     }
     
